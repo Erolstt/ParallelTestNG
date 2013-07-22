@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ParallelTest" parallel="tests" thread-count="3">
+
+	<parameter name ="chromeDriver" value ="webdriver.chrome.driver"></parameter>
+    <parameter name ="chromeDriverPath" value ="..//chromedriver.exe"></parameter>
+    <parameter name ="ieDriver" value ="webdriver.ie.driver"></parameter>
+    <parameter name ="ieDriverPath" value ="..//IEDriverServer.exe"></parameter>
+    
+	  <!-- Firefox Test -->
+	  <test name="Firefox Test">
+	  <parameter name ="browser" value ="FF"></parameter>
+	    <classes>
+	      <class name="com.erol.webdriver.parallel.GoogleSearchTest"/>
+	    </classes>
+	  </test> 
+	  
+	  <!-- Chrome Test -->
+	   <test name="Chrome Test">
+	   <parameter name ="browser" value ="Chrome"></parameter>
+	    <classes>
+	      <class name="com.erol.webdriver.parallel.GoogleSearchTest"/>
+	    </classes>
+	  </test> <!-- Test -->
+	  
+	  <!-- Internet Explorer Test -->
+	   <test name="Internet Explorer Test">
+	   <parameter name ="browser" value ="IE"></parameter>
+	    <classes>
+	      <class name="com.erol.webdriver.parallel.GoogleSearchTest"/>
+	    </classes>
+	  </test> <!-- Test -->
+	  
+</suite> <!-- Suite -->
